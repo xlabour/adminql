@@ -1,1 +1,2 @@
 # adminql
+Admin Simple SQL
