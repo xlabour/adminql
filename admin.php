@@ -22,6 +22,7 @@ function getBTS($lon, $lat){
 	$header[] = 'Content-type:application/json';
 	$url = getenv('CURL_URL');
 	$ch = curl_init();
+	
 
 	curl_setopt($ch, CURLOPT_HEADER, false);
 	curl_setopt($ch, CURLINFO_HEADER_OUT, false);
