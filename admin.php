@@ -11,6 +11,7 @@ if (!isset($_SESSION['username']) || $_SESSION['username']==''){
 	exit();
 }
 
+
 include ('./_dbconnect.inc.php');
 
 $agent = "Opera/10.61 (J2ME/MIDP; Opera Mini/5.1.21219/19.999; en-US; rv:1.9.3a5) WebKit/534.5 Presto/2.6.30";
