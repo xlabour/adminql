@@ -62,7 +62,7 @@ if ($dashboardTotal>0){
 		//get BTS terdekat
 		if ($d['lonlat']!=''){
 			$btsData = getBTS($lonlat[0], $lonlat[1]);
-			$btslocation = "4G:" . $btsData['siteName4g'] . "(".number_format($btsData['distance4g'],3)."Km)<br />" . "3G:" . $btsData['siteName3g'] . "(".number_format($btsData['distance3g'],3)."Km) " ;
+			$btslocation = "4G:" . $btsData['siteName4g'] . "(".number_format($btsData['distance4g'],3)."Km) - " . "3G:" . $btsData['siteName3g'] . "(".number_format($btsData['distance3g'],3)."Km) " ;
 		} else {
 			$btslocation = "-";
 		}
