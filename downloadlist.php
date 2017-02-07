@@ -87,104 +87,9 @@ if ($dashboardTotal>0){
 	}
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
 
-  <!-- Basic Page Needs
-  ------------------------- -->
-  <meta charset="utf-8">
-  <title>XL m-Ads :: Admin</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Mobile Specific Metas
-  ------------------------- -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  ------------------------- -->
-  <!--link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"-->
-
-  <!-- CSS
-  ------------------------- -->
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="skeleton.css">
-
-  <!-- Favicon
-  ------------------------- -->
-  <link rel="shortcut icon" type="image//vnd.microsoft.icon" href="favicon.ico">
-  <script src="jquery.js"></script>
-  <script language="javascript">
-		statusfu = function(_this, _id, _statusid){
-			$.ajax({
-				url:'./statusfu.php',
-				type:'post',
-				dataType:'json',
-				data:'&id='+ _id+ '&statusid=' + _statusid,
-				success:function(json){
-					if (json.status){
-						$(_this).removeClass();
-						if (_statusid==2){
-							$(_this).html('&#10004; DONE');
-							$(_this).addClass('button button-green');
-							$(_this).attr('onclick','javascript:statusfu(this,'+ _id +',1);');
-						} else {
-							$(_this).html('FOLLOW UP');
-							$(_this).addClass('button');
-							$(_this).attr('onclick','javascript:statusfu(this,'+ _id +',2);');
-						}
-					} else {
-						alert('[ERROR] Something went wrong!');
-					}
-				}
-			});
-		}
-  </script>
-</head>
-<style>
-.boxPrint{
-	border: 1px solid #E1E1E1;
-    border-radius: 4px;
-	font-size:14px; 
-	text-align:center;
-	margin-top:20px;
-	min-height:100px;
-	padding:10px;
-}
-
-.dashboardFont{
-	font-size:28px;
-	font-weight:bold;
-}
-</style>
 <body style="font-size:12px;">
 
-<!-- Primary Page Layout
-------------------------- -->
-<div class="container">
-	<div class="row">
-		<div class="value-props row">
-			<div class="boxPrint four columns value-prop">
-				Total:
-				<div class="dashboardFont" id="dashboardTotal"><?php echo $dashboardTotal;?></div>
-			</div>
-			<div class="boxPrint four columns value-prop">
-				Followed up:
-				<div class="dashboardFont" id="dashboardFollowup"><?php echo $dashboardFollowup;?></div>
-			</div>
-			<div class="boxPrint four columns value-prop">
-				New Today:
-				<div class="dashboardFont" id="dashboardToday"><?php echo $dashboardToday;?></div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<center>
-			<div class="column" style="margin-top: 3%">
-				<div style="position:relative; overflow: show">
-					<br /><br />
-					<h6 style="color:#777; font-weight:bold;">Welcome <?php echo $_SESSION['username'];?> (<a href="./logout.php">Logout</a>),</h6>
 					<table style='background-color: #ffe486; font-size:12px; font-family:tahoma' cellpadding='4' cellspacing='1' border='0'>
 						<tr><th>No.</th><th style='text-align:center'>Datetime (Descending)</th><th>Name</th><th>Phone</th><th>Address</th><th>Maps</th><th>BTS</th><th style='text-align:center'>Follow Up</th></tr>
 						<?php
@@ -197,13 +102,4 @@ if ($dashboardTotal>0){
 						}
 						?>
 					</table>
-				</div>
-			</div>
-		</center>
-	</div>
-</div>
-
-<!-- End Document
-  ------------------------- -->
 </body>
-</html>
