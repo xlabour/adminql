@@ -90,7 +90,7 @@ if ($dashboardTotal>0){
 <body style="font-size:12px;">
 
 					<table style='background-color: #ffe486; font-size:12px; font-family:tahoma' cellpadding='4' cellspacing='1' border='0'>
-						<tr><th>No.</th><th style='text-align:center'>Datetime (Descending)</th><th>Name</th><th>Phone</th><th>Address</th><th>Maps</th><th>BTS</th><th style='text-align:center'>Follow Up</th></tr>
+						<tr><th>No.</th><th style='text-align:center'>Datetime (Descending)</th><th>Name</th><th>Phone</th><th>Address</th><th>Maps</th><th>BTS</th></tr>
 						<?php
 						if ($dashboardTotal>0){
 							echo $body;
