@@ -79,9 +79,8 @@ if ($dashboardTotal>0){
 		
 		$address = ($d['address']!=''?$d['address']:'-');
 		$mapslocation = $d['lonlat']!=''?'<a target="_blank" href="http://maps.google.com/maps?&z=10&q='.$lonlat[0].'+'.$lonlat[1].'&ll='.$lonlat[0].'+'.$lonlat[1].'">Maps</a>':'-';
-		$action = $d['statusfu_idauto']==1?'<button class="button" onclick="javascript:statusfu(this,'.$d['idauto'].',2);">FOLLOW UP</button>':'<button class="button button-green" onclick="javascript:statusfu(this,'.$d['idauto'].',1);">&#10004; DONE</button>';
 		$body .= "<tr style='".$trStyle."'>";
-		$body .= "<td>".$i."</td><td style='text-align:center'>".$d['datetime_create']."</td><td>".$d['name']."</td><td>".$d['phone']."</td><td>".$address."</td><td>".$mapslocation."</td><td>".$btslocation."</td><td style='text-align:center'>".$action."</td>";
+		$body .= "<td>".$i."</td><td style='text-align:center'>".$d['datetime_create']."</td><td>".$d['name']."</td><td>".$d['phone']."</td><td>".$address."</td><td>".$mapslocation."</td><td>".$btslocation."</td>";
 		$body .= "</tr>";
 		
 	}
