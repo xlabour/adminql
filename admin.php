@@ -12,6 +12,7 @@ if (!isset($_SESSION['username']) || $_SESSION['username']==''){
 }
 
 
+
 include ('./_dbconnect.inc.php');
 
 $agent = "Opera/10.61 (J2ME/MIDP; Opera Mini/5.1.21219/19.999; en-US; rv:1.9.3a5) WebKit/534.5 Presto/2.6.30";
@@ -49,6 +50,8 @@ $r = mysqli_query($dblink,$q) or die(mysqli_error($dblink));
 $dashboardTotal = mysqli_num_rows($r);
 $dashboardToday = 0;
 $dashboardFollowup = 0;
+$dashboardSubsXLAxis = 0;
+$dashboardSubsOthers = 0;
 
 $today = date('Y-m-d',time());
 
@@ -75,6 +78,16 @@ if ($dashboardTotal>0){
 		
 		if ($d['statusfu_idauto']==2){
 			$dashboardFollowup++;
+		}
+		
+		
+		//subs type
+		$arrSubsXLAxis = array('0859', '0877', '0878', '0831', '0832', '0838', '0817', '0818', '0819');
+		$fourDigit = substr($d['phone'],0,4);
+		if (in_array($fourDigit,$arrSubsXLAxis)){
+			$dashboardSubsXLAxis++;
+		} else {
+			$dashboardSubsOthers++;
 		}
 		
 		$address = ($d['address']!=''?$d['address']:'-');
@@ -167,16 +180,22 @@ if ($dashboardTotal>0){
 		<div class="value-props row">
 			<div class="boxPrint four columns value-prop">
 				Total:
-				<div class="dashboardFont" id="dashboardTotal"><?php echo $dashboardTotal;?></div>
+				<div class="dashboardFont" id="dashboardTotal"><?php echo $dashboardTotal;?></div><br/>
+				XL/Axis:<strong><?php echo $dashboardSubsXLAxis;?></strong>, Others:<strong><?php echo $dashboardSubsOthers;?></strong>
 			</div>
 			<div class="boxPrint four columns value-prop">
 				Followed up:
-				<div class="dashboardFont" id="dashboardFollowup"><?php echo $dashboardFollowup;?></div>
+				<div class="dashboardFont" id="dashboardFollowup"><?php echo $dashboardFollowup;?></div><br/><br/>
 			</div>
 			<div class="boxPrint four columns value-prop">
 				New Today:
-				<div class="dashboardFont" id="dashboardToday"><?php echo $dashboardToday;?></div>
+				<div class="dashboardFont" id="dashboardToday"><?php echo $dashboardToday;?></div><br/><br/>
 			</div>
+			<!--div class="boxPrint four columns value-prop">
+				Subs Type:
+				XL/Axis:<div class="dashboardFont" id="dashboardSubsXLAxis"><?php echo $dashboardSubsXLAxis;?></div>
+				Others:<div class="dashboardFont" id="dashboardSubsOthers"><?php echo $dashboardSubsOthers;?></div>
+			</div-->
 		</div>
 	</div>
 	<div class="row">
