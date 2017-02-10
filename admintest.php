@@ -181,7 +181,7 @@ if ($dashboardTotal>0){
 			<div class="boxPrint four columns value-prop">
 				Total:
 				<div class="dashboardFont" id="dashboardTotal"><?php echo $dashboardTotal;?></div><br/>
-				XL/Axis:<?php echo $dashboardSubsXLAxis;?>, Others:<?php echo $dashboardSubsOthers;?>
+				XL/Axis:<strong><?php echo $dashboardSubsXLAxis;?></strong>, Others:<strong><?php echo $dashboardSubsOthers;?></strong>
 			</div>
 			<div class="boxPrint four columns value-prop">
 				Followed up:
