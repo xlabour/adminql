@@ -180,7 +180,8 @@ if ($dashboardTotal>0){
 		<div class="value-props row">
 			<div class="boxPrint four columns value-prop">
 				Total:
-				<div class="dashboardFont" id="dashboardTotal"><?php echo $dashboardTotal;?></div>
+				<div class="dashboardFont" id="dashboardTotal"><?php echo $dashboardTotal;?></div><br/>
+				XL/Axis:<?php echo $dashboardSubsXLAxis;?>, Others:<?php echo $dashboardSubsOthers;?>
 			</div>
 			<div class="boxPrint four columns value-prop">
 				Followed up:
@@ -190,11 +191,11 @@ if ($dashboardTotal>0){
 				New Today:
 				<div class="dashboardFont" id="dashboardToday"><?php echo $dashboardToday;?></div>
 			</div>
-			<div class="boxPrint four columns value-prop">
+			<!--div class="boxPrint four columns value-prop">
 				Subs Type:
 				XL/Axis:<div class="dashboardFont" id="dashboardSubsXLAxis"><?php echo $dashboardSubsXLAxis;?></div>
 				Others:<div class="dashboardFont" id="dashboardSubsOthers"><?php echo $dashboardSubsOthers;?></div>
-			</div>
+			</div-->
 		</div>
 	</div>
 	<div class="row">
