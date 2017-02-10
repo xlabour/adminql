@@ -185,11 +185,11 @@ if ($dashboardTotal>0){
 			</div>
 			<div class="boxPrint four columns value-prop">
 				Followed up:
-				<div class="dashboardFont" id="dashboardFollowup"><?php echo $dashboardFollowup;?></div>
+				<div class="dashboardFont" id="dashboardFollowup"><?php echo $dashboardFollowup;?></div><br/><br/>
 			</div>
 			<div class="boxPrint four columns value-prop">
 				New Today:
-				<div class="dashboardFont" id="dashboardToday"><?php echo $dashboardToday;?></div>
+				<div class="dashboardFont" id="dashboardToday"><?php echo $dashboardToday;?></div><br/><br/>
 			</div>
 			<!--div class="boxPrint four columns value-prop">
 				Subs Type:
